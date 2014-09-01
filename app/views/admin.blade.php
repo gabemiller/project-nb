@@ -14,7 +14,7 @@
             <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
-                    <h3>{{count($article)}}</h3>
+                    <h3>{{$article}}</h3>
                     <p>Hírek</p>
                 </div>
                 <div class="icon">
@@ -27,7 +27,7 @@
             <!-- small box -->
             <div class="small-box bg-divide">
                 <div class="inner">
-                    <h3>{{count($event)}}</h3>
+                    <h3>{{$event}}</h3>
                     <p>Események</p>
                 </div>
                 <div class="icon">
@@ -40,7 +40,7 @@
             <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
-                    <h3>{{count($gallery)}}</h3>
+                    <h3>{{$gallery}}</h3>
                     <p>Galériák</p>
                 </div>
                 <div class="icon">
@@ -53,7 +53,7 @@
             <!-- small box -->
             <div class="small-box bg-red">
                 <div class="inner">
-                    <h3>{{count($page)}}</h3>
+                    <h3>{{$page}}</h3>
                     <p>Oldalak</p>
                 </div>
                 <div class="icon">

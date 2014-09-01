@@ -460,3 +460,7 @@ fieldset[disabled] .btn-tardona-yellow.active {
 .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
     width: 100% !important;
 }
+
+.table-middle>thead>tr>th, .table-middle>tbody>tr>th, .table-middle>tfoot>tr>th, .table-middle>thead>tr>td, .table-middle>tbody>tr>td, .table-middle>tfoot>tr>td{
+    vertical-align: middle;
+}

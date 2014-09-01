@@ -7,7 +7,10 @@
 @foreach($articles as $article)
 <div class="article list-box">
     <h3>{{HTML::link($article->getLink(),$article->title)}}</h3>
-    <p class="small">Írta: {{$article->getAuthorName()}} | Létrehozva: {{$article->getCreateDate()}} </p>
+    <p class="small">
+        <strong>{{$article->getAuthorName()}}</strong> <br> 
+        {{$article->getCreateDate()}} 
+    </p>
     <p class="text-justify">{{$article->getParragraph()}}</p>
     <div class="tags">
         @if(sizeof($article->tagNames()) > 0)

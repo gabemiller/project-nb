@@ -31,7 +31,7 @@ class GalleryController extends \BaseController {
     public function index() {
         View::share('title', 'Galériák');
 
-        $this->layout->content = View::make('admin.gallery.index')->with('galleries', Gallery::all());
+        $this->layout->content = View::make('admin.gallery.index')->with('galleries', Gallery::all(['id','name','created_at']));
     }
 
     /**

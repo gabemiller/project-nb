@@ -3,9 +3,7 @@
 namespace Site;
 
 use Divide\CMS\Article;
-use Divide\CMS\Page;
 use View;
-
 
 class HomeController extends \BaseController {
 
@@ -19,24 +17,10 @@ class HomeController extends \BaseController {
      */
     public function index() {
         View::share('title', 'Főoldal');
-        
-        
-        $article = Article::whereRaw('shows = ? ORDER BY created_at DESC',array(true))->paginate(10);
 
-        $this->layout->content = View::make('index')->with('articles',$article);
+        $article = Article::where('shows', '=', true)->orderBy('created_at', 'DESC')->select(['id', 'title', 'author_id', 'created_at', 'content'])->paginate(10);
+
+        $this->layout->content = View::make('index')->with('articles', $article);
     }
-
-
-    /**
-     * Display the specified resource.
-     * GET /site\index/{id}
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function show($id) {
-    }
-    
-
 
 }

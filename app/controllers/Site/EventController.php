@@ -3,7 +3,6 @@
 namespace Site;
 
 use Divide\CMS\Event;
-use Divide\CMS\Page;
 use View;
 use Request;
 use Conner\Tagging\Tag;
@@ -21,8 +20,8 @@ class EventController extends \BaseController {
      */
     public function index() {
         View::share('title', 'Események');
-        View::share('pages',Page::all());
 
+          $events = Event::where('shows', '=', true)->orderBy('start', 'DESC')->select(['id', 'title', 'start', 'end', 'content'])->paginate(10);
         $events = Event::whereRaw('shows = ? ORDER BY start DESC', array(true))->paginate(10);
 
         $this->layout->content = View::make('site.event.index')->with('events', $events);
@@ -40,8 +39,7 @@ class EventController extends \BaseController {
         $event = Event::find($id);
         
         View::share('title', $event->title);
-        View::share('pages',Page::all());
-
+        
         $this->layout->content = View::make('site.event.show')->with('event', $event)->with('url',Request::url());
     }
     

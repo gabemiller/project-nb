@@ -8,7 +8,6 @@ use Input;
 use Response;
 use Exception;
 use Redirect;
-use Session;
 use Validator;
 use Config;
 use Image;
@@ -25,7 +24,7 @@ class UsersController extends \BaseController {
      */
     public function index() {
         View::share('title', 'Felhasználók');
-        $this->layout->content = View::make('admin.users.index')->with('users', User::all());
+        $this->layout->content = View::make('admin.users.index')->with('users', User::all(['id','first_name','last_name','created_at','last_login','email','phone']));
     }
 
     /**
@@ -47,8 +46,8 @@ class UsersController extends \BaseController {
         try {
 
             $rules = array(
-                'first_name' => 'required|alpha_num',
-                'last_name' => 'required|alpha_num',
+                'first_name' => 'required',
+                'last_name' => 'required',
                 'email' => 'required|email|unique:users',
                 'phone' => 'numeric|digits_between:9,20'
             );
@@ -75,7 +74,7 @@ class UsersController extends \BaseController {
                 return Redirect::back()->withInput()->withErrors('Az adminisztrátor felvétele nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('Az adminisztrátor felvétele nem sikerült!');
@@ -142,7 +141,7 @@ class UsersController extends \BaseController {
                 return Redirect::back()->withInput()->withErrors('Az adminisztrátor módosítása nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('Az adminisztrátor módosítása nem sikerült!');
@@ -167,7 +166,7 @@ class UsersController extends \BaseController {
                 return Response::json(['message' => 'A(z) ' . $id . ' azonosítójú felhasználó törlése nem sikerült!', 'status' => false]);
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Response::json(['message' => $e->getMessage(), 'status' => false]);
             } else {
                 return Response::json(['message' => 'A(z) ' . $id . ' azonosítójú felhasználó törlése nem sikerült!', 'status' => false]);
@@ -256,7 +255,7 @@ class UsersController extends \BaseController {
                 return Redirect::back()->withInput()->withErrors('Az adataid módosítása nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('Az adataid módosítása nem sikerült!');
@@ -291,7 +290,7 @@ class UsersController extends \BaseController {
                 return Redirect::back()->withInput()->withErrors('A jelszó módosítása nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('A jelszó módosítása nem sikerült!');
@@ -344,7 +343,7 @@ class UsersController extends \BaseController {
                 return Redirect::back()->withInput()->withErrors('A profilkép módosítása nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('A profilkép módosítása nem sikerült!');
@@ -364,7 +363,7 @@ class UsersController extends \BaseController {
                 return Redirect::back()->withInput()->withErrors('A profilkép törlése nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('A profilkép módosítása nem sikerült!');

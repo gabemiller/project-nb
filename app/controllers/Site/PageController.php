@@ -11,16 +11,6 @@ class PageController extends \BaseController {
     protected $layout = '_frontend.master';
 
     /**
-     * Display a listing of the resource.
-     * GET /site\page
-     *
-     * @return Response
-     */
-    public function index() {
-        //
-    }
-
-    /**
      * Display the specified resource.
      * GET /site\page/{id}
      *

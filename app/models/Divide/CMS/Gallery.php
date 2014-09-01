@@ -16,7 +16,7 @@ class Gallery extends \Eloquent {
     public static function getGalleries() {
         $array = array('0' => 'Válassz galériát!');
 
-        foreach (Gallery::all() as $gallery) {
+        foreach (Gallery::all(['id','name']) as $gallery) {
             $array[$gallery->id] = $gallery->name;
         }
 

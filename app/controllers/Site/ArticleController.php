@@ -12,16 +12,6 @@ class ArticleController extends \BaseController {
     protected $layout = '_frontend.master';
 
     /**
-     * Display a listing of the resource.
-     * GET /site\article
-     *
-     * @return Response
-     */
-    public function index() {
-       
-    }
-
-    /**
      * Display the specified resource.
      * GET /site\article/{id}
      *
@@ -43,7 +33,7 @@ class ArticleController extends \BaseController {
      */
     public function tag($id) {
         
-        $tag = Tag::where('id','=',$id)->first();
+        $tag = Tag::where('id','=',$id)->first(['id','name']);
         
         View::share('title', 'Hírek: '.$tag->name);
         

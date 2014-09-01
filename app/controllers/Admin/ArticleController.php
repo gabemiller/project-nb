@@ -25,7 +25,7 @@ class ArticleController extends \BaseController {
     public function index() {
         View::share('title', 'Hírek');
 
-        $this->layout->content = View::make('admin.article.index')->with('articles', Article::all());
+        $this->layout->content = View::make('admin.article.index')->with('articles', Article::all(['id', 'author_id', 'title', 'created_at']));
     }
 
     /**
@@ -71,19 +71,19 @@ class ArticleController extends \BaseController {
             $article->content = Input::get('content');
             $article->shows = Input::get('shows') ? true : false;
             $article->gallery_id = is_numeric(Input::get('gallery')) ? Input::get('gallery') : 0;
-               
-            
+
+
 
             if ($article->save()) {
-				if(Input::get('tags')){
-                $article->tag(explode(',',Input::get('tags')));
-				}
+                if (Input::get('tags')) {
+                    $article->tag(explode(',', Input::get('tags')));
+                }
                 return Redirect::back()->with('message', 'A hír feltöltése sikerült!');
             } else {
                 return Redirect::back()->withInput()->withErrors('A hír feltöltése nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('A hír feltöltése nem sikerült!');
@@ -148,7 +148,7 @@ class ArticleController extends \BaseController {
             $article->content = Input::get('content');
             $article->shows = Input::get('shows') ? true : false;
             $article->gallery_id = is_numeric(Input::get('gallery')) ? Input::get('gallery') : 0;
-            $article->retag(explode(',',Input::get('tags')));
+            $article->retag(explode(',', Input::get('tags')));
 
             if ($article->save()) {
                 return Redirect::back()->with('message', 'A hír módosítása sikerült!');
@@ -156,7 +156,7 @@ class ArticleController extends \BaseController {
                 return Redirect::back()->withInput()->withErrors('A hír módosítása nem sikerült!');
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
+            if (Config::get('app.debug')) {
                 return Redirect::back()->withInput()->withErrors($e->getMessage());
             } else {
                 return Redirect::back()->withInput()->withErrors('A hír módosítása nem sikerült!');
@@ -177,15 +177,15 @@ class ArticleController extends \BaseController {
             $article = Article::find($id);
 
             if ($article->delete()) {
-                return Response::json(['message'=>'A(z) '.$id.' azonosítójú hír törlése sikerült!','status'=>true]);
+                return Response::json(['message' => 'A(z) ' . $id . ' azonosítójú hír törlése sikerült!', 'status' => true]);
             } else {
-                return Response::json(['message'=>'A(z) '.$id.' azonosítójú hír törlése nem sikerült!','status'=>false]);
+                return Response::json(['message' => 'A(z) ' . $id . ' azonosítójú hír törlése nem sikerült!', 'status' => false]);
             }
         } catch (Exception $e) {
-            if (Config::get('globals.debug')) {
-                return Response::json(['message'=>$e->getMessage(),'status'=>false]);
+            if (Config::get('app.debug')) {
+                return Response::json(['message' => $e->getMessage(), 'status' => false]);
             } else {
-                return Response::json(['message'=>'A(z) '.$id.' azonosítójú hír törlése nem sikerült!','status'=>false]);
+                return Response::json(['message' => 'A(z) ' . $id . ' azonosítójú hír törlése nem sikerült!', 'status' => false]);
             }
         }
     }

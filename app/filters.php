@@ -13,18 +13,19 @@
 
 App::before(function($request) {
 
+    Event::fire('clockwork.controller.start');
 
     /**
      * A láblévben megjelenő cikkek objektumát hozza létre.
      */
-    if (Request::path() != '/admin/*') {
-        View::share('articleFooter', \Divide\CMS\Article::orderBy('created_at', 'desc')->take('3')->get());
+    if (!Request::is('admin') && !Request::is('admin/*')) {
+        View::share('articleFooter', \Divide\CMS\Article::orderBy('created_at', 'desc')->take('3')->get(['id','title','author_id','created_at']));
     }
 
     /**
      * A felhasználó objektumát hozza létre!.
      */
-    if (Sentry::check()) {
+    if ((Request::is('admin') || Request::is('admin/*')) && Sentry::check()) {
         View::share('user', \Divide\CMS\User::find(\Sentry::getUser()->id));
     }
 
@@ -42,7 +43,7 @@ App::before(function($request) {
 
 
 App::after(function($request, $response) {
-    //
+    Event::fire('clockwork.controller.end');
 });
 
 /*
@@ -155,3 +156,5 @@ Route::filter('csrf', function() {
         throw new Illuminate\Session\TokenMismatchException;
     }
 });
+
+
