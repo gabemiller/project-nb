@@ -457,6 +457,8 @@ fieldset[disabled] .btn-tardona-yellow.active {
     display: none;
 }
 
+.FB_UI_Hidden { width: 100px !important; }
+
 .fb_iframe_widget, .fb_iframe_widget span, .fb_iframe_widget span iframe[style] {
     width: 100% !important;
 }
