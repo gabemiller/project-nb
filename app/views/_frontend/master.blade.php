@@ -3,14 +3,8 @@
     <head prefix="og: http://ogp.me/ns#">
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-		
-		
-		<meta property="og:image" content="http://banhorvati.hu/assets/Banhorvati_mini.png">
-		<meta property="og:image:type" content="image/png">
-		<meta property="og:image:width" content="200">
-		<meta property="og:image:height" content="211">
-		
-		
+
+
         <link href="/assets/favicon.ico" rel="icon" type="image/x-icon" />
         <title>{{Config::get('globals.title');}} - {{$title or ''}}</title>
 
@@ -28,6 +22,7 @@
 
     </head>
     <body>
+        <div id="fb-root"></div>
 
         @include('_frontend.lightbox')
         @include('_frontend.header')
@@ -38,12 +33,17 @@
                         <div class="panel-body">
 
                             <div class="row">
-                                <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3">
 
-                                    {{$mainMenu->asUl(array('class'=>'list-unstyled nav-menu'))}}
+                                    <button type="button" class="collapsed btn-menu hidden-md hidden-lg" data-toggle="collapse" data-target="#navCollapse">
+                                         <i class="fa fa-bars"></i> Menü
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navCollapse">
+                                        {{$mainMenu->asUl(array('class'=>'list-unstyled nav-menu'))}}
+                                    </div>
 
                                 </div>
-                                <div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+                                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9">
                                     @yield('content')
                                 </div>
                             </div>
@@ -56,11 +56,11 @@
         </div>
         @include('_frontend.footer')
 
-        <div id="fb-root"></div>
+
         <script>
             window.fbAsyncInit = function() {
                 FB.init({
-                    appId: '567582800013985',
+                    appId: '300832236763668',
                     xfbml: true,
                     version: 'v2.0'
                 });

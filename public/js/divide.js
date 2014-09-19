@@ -2,17 +2,6 @@ $(document).ready(function() {
 
     /**
      * 
-     */
-
-    $('.nav-menu').metisMenu();
-
-    $('.nav-menu').find('.fa.fa-bars').on('click', this, function(e) {
-        e.preventDefault();
-        window.location = $(this).closest('li').find('a').attr('href');
-    });
-    
-    /**
-     * 
      * @type Number|@call;$@call;height
      */
     /*var height = 0;
