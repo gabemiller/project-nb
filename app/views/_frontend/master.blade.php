@@ -45,7 +45,6 @@
                                             <a href="http://banhorvati.hu/oldal/84/nagybarca-es-tersegenek-kozossegfejlesztesi-projektje" target="_blank">
                                                 <img class="img-responsive" src="http://banhorvati.hu/img/gallery/38/1533154094.4542-nagybarca-es-tersegenek.jpg" alt="Infóblokk">
                                             </a>
-                                            {{$competitionMenu->asUl(array('class'=>'list-unstyled nav-menu-competition'))}}
                                             <h4>Navigáció</h4>
                                             {{$mainMenu->asUl(array('class'=>'list-unstyled nav-menu'))}}
                                         </div>
