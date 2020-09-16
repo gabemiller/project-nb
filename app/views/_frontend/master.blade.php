@@ -42,6 +42,9 @@
 
                                         <div class="collapse" id="navCollapse">
                                             <h4>Pályázatok</h4>
+                                            <a href="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" target="_blank" style="margin-bottom: 10px">
+                                                <img class="img-responsive" src="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" alt="Magyar Falu Program">
+                                            </a>
                                             <a href="http://banhorvati.hu/oldal/84/nagybarca-es-tersegenek-kozossegfejlesztesi-projektje" target="_blank">
                                                 <img class="img-responsive" src="http://banhorvati.hu/img/gallery/38/1533154094.4542-nagybarca-es-tersegenek.jpg" alt="Infóblokk">
                                             </a>
