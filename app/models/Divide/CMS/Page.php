@@ -42,12 +42,13 @@ class Page extends \Eloquent {
     }
 
     /**
-     * 
+     *
      * @param type $menu
-     * @param type $id
+     * @param int $id
+     * @param int $isCompetition
      */
-    public static function getPagesForMenu($menu, $id) {
-        $pages = Page::where('parent', '=', $id)->get(['id', 'menu', 'parent', 'title']);
+    public static function getPagesForMenu($menu, $id, $isCompetition = 0) {
+        $pages = Page::where('parent', '=', $id)->where('is_competition','=',$isCompetition)->get(['id', 'menu', 'parent', 'title']);
 
         if ($id == 0) {
             foreach ($pages as $page) {

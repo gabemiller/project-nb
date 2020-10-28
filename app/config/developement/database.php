@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'divide_tardona_cms',
+			'database'  => 'divide_nagybarca_cms',
 			'username'  => 'root',
 			'password'  => 'root',
 			'charset'   => 'utf8',

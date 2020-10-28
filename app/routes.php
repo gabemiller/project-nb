@@ -38,6 +38,8 @@ Route::get('oldal/{id}/{title}', ['uses' => 'Site\PageController@show', 'as' => 
 
 Route::get('documentumok', ['uses' => 'Site\DocumentController@index', 'as' => 'dokumentumok.index']);
 
+Route::get('palyazatok', ['uses' => 'Site\PageController@showCompetitions', 'as' => 'palyazatok.index']);
+
 /**
  * -----------------------------------------------------------------------------
  * Site menu
@@ -47,6 +49,10 @@ Route::get('documentumok', ['uses' => 'Site\DocumentController@index', 'as' => '
  * 
  */
 if (!Request::is('admin') && !Request::is('admin/*')) {
+
+    Menu::make('competitionMenu', function ($menu) {
+        $menu->add('Pályázatok', array('route' => 'palyazatok.index'));
+    });
 
     Menu::make('mainMenu', function($menu) {
 

@@ -49,6 +49,7 @@
                                                 <img class="img-responsive" src="http://banhorvati.hu/img/gallery/42/1602448124.9999-ban-volgye-helyi-termek.jpg" alt="Infóblokk">
                                             </a>
                                             <h4>Navigáció</h4>
+                                            {{$competitionMenu->asUl(array('class'=>'list-unstyled nav-menu-competition'))}}
                                             {{$mainMenu->asUl(array('class'=>'list-unstyled nav-menu'))}}
                                         </div>
                                     </nav>
