@@ -26,8 +26,8 @@
                 @endforeach
             </div>
             <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 hidden-xs hidden-sm">
-                <h3>Kövessen minket!</h3> 
-                <div class="fb-like-box" data-href="https://www.facebook.com/pages/Nagybarca/109444595749376?fref=ts" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+                <h3>Információ</h3>
+                <a href="http://nagybarca.hu/oldal/61/allaslehetosegek">Álláslehetőség</a>
             </div>
         </div>
     </div>
