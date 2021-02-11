@@ -24,6 +24,21 @@
     <body>
         <div id="fb-root"></div>
 
+         <div class="competition-drop-up open">
+                    <div class="competition-container">
+                      <a href="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" target="_blank" style="margin-bottom: 10px">
+                            <img class="img-responsive" src="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" alt="Magyar Falu Program">
+                        </a>
+                        <a href="http://banhorvati.hu/oldal/99/ban-volgye-helyi-termek-fejlesztese" target="_blank">
+                            <img class="img-responsive" src="http://banhorvati.hu/img/gallery/42/1602448124.9999-ban-volgye-helyi-termek.jpg" alt="Infóblokk">
+                        </a>
+                        {{$competitionMenu->asUl(array('class'=>'list-unstyled nav-menu-competition'))}}
+                    </div>
+                    <button class="btn-circle">
+                        <span></span>
+                    </button>
+                </div>
+
         @include('_frontend.lightbox')
         @include('_frontend.header')
         <div class="container">

@@ -32,6 +32,12 @@ $(document).ready(function() {
         $('.gallery-item',this).height(highestBox+20);
 
 	});
+
+	const competitionBtn = document.querySelector('.competition-drop-up > .btn-circle');
+	competitionBtn.addEventListener('click', function (e) {
+		e.preventDefault()
+		this.parentNode.classList.toggle('open');
+	});
     
 
 });
