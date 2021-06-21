@@ -29,8 +29,8 @@
                       <a href="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" target="_blank" style="margin-bottom: 10px">
                             <img class="img-responsive" src="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" alt="Magyar Falu Program">
                         </a>
-                        <a href="http://banhorvati.hu/oldal/99/ban-volgye-helyi-termek-fejlesztese" target="_blank">
-                            <img class="img-responsive" src="http://banhorvati.hu/img/gallery/42/1602448124.9999-ban-volgye-helyi-termek.jpg" alt="Infóblokk">
+                        <a href="http://nagybarca.hu/oldal/62/nagybarca-kozsegi-onkormanyzata-a-top-141-19-palyazat" target="_blank">
+                            <img class="img-responsive" src="http://nagybarca.hu/img/gallery/19/1624266582.0727-top-141-19-palyazat.jpg" alt="Infóblokk">
                         </a>
                         {{$competitionMenu->asUl(array('class'=>'list-unstyled nav-menu-competition'))}}
                     </div>
@@ -60,8 +60,8 @@
                                             <a href="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" target="_blank" style="margin-bottom: 10px">
                                                 <img class="img-responsive" src="http://banhorvati.hu/img/gallery/41/1600201704.4254-magyar-falu-program.jpg" alt="Magyar Falu Program">
                                             </a>
-                                            <a href="http://banhorvati.hu/oldal/99/ban-volgye-helyi-termek-fejlesztese" target="_blank">
-                                                <img class="img-responsive" src="http://banhorvati.hu/img/gallery/42/1602448124.9999-ban-volgye-helyi-termek.jpg" alt="Infóblokk">
+                                            <a href="http://nagybarca.hu/oldal/62/nagybarca-kozsegi-onkormanyzata-a-top-141-19-palyazat" target="_blank">
+                                                <img class="img-responsive" src="http://nagybarca.hu/img/gallery/19/1624266582.0727-top-141-19-palyazat.jpg" alt="Infóblokk">
                                             </a>
                                             <h4>Navigáció</h4>
                                             {{$competitionMenu->asUl(array('class'=>'list-unstyled nav-menu-competition'))}}
