@@ -38,6 +38,8 @@ Route::get('oldal/{id}/{title}', ['uses' => 'Site\PageController@show', 'as' => 
 
 Route::get('documentumok', ['uses' => 'Site\DocumentController@index', 'as' => 'dokumentumok.index']);
 
+Route::get('eu-palyazatok', ['uses' => 'Site\PageController@showEuCompetitions', 'as' => 'eupalyazatok.index']);
+
 Route::get('palyazatok', ['uses' => 'Site\PageController@showCompetitions', 'as' => 'palyazatok.index']);
 
 /**
@@ -51,7 +53,12 @@ Route::get('palyazatok', ['uses' => 'Site\PageController@showCompetitions', 'as'
 if (!Request::is('admin') && !Request::is('admin/*')) {
 
     Menu::make('competitionMenu', function ($menu) {
+        $menu->add('EU Pályázatok', array('route' => 'eupalyazatok.index'));
         $menu->add('Pályázatok', array('route' => 'palyazatok.index'));
+    });
+
+    Menu::make('competitionSideMenu', function ($menu) {
+        $menu->add('EU Pályázatok', array('route' => 'eupalyazatok.index'));
     });
 
     Menu::make('mainMenu', function($menu) {

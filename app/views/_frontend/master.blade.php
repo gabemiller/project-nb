@@ -32,7 +32,7 @@
                         <a href="http://nagybarca.hu/oldal/62/nagybarca-kozsegi-onkormanyzata-a-top-141-19-palyazat" target="_blank">
                             <img class="img-responsive" src="http://nagybarca.hu/img/gallery/19/1624266582.0727-top-141-19-palyazat.jpg" alt="Infóblokk">
                         </a>
-                        {{$competitionMenu->asUl(array('class'=>'list-unstyled nav-menu-competition'))}}
+                        {{$competitionSideMenu->asUl(array('class'=>'list-unstyled nav-menu-competition'))}}
                     </div>
                     <button class="btn-circle">
                         <span></span>

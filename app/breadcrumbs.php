@@ -54,6 +54,16 @@ Breadcrumbs::register('oldalak.show', function($breadcrumbs,$page) {
     $breadcrumbs->push($page->title, route('oldalak.show',$page->id));
 });
 
+Breadcrumbs::register('eupalyazatok.index', function($breadcrumbs) {
+    $breadcrumbs->parent('fooldal');
+    $breadcrumbs->push('EU Pályázatok', route('palyazatok.index'));
+});
+
+Breadcrumbs::register('palyazatok.index', function($breadcrumbs) {
+    $breadcrumbs->parent('fooldal');
+    $breadcrumbs->push('Pályázatok', route('palyazatok.index'));
+});
+
 /**
  * -----------------------------------------------------------------------------
  * Admin
